@@ -1,8 +1,14 @@
 import React, { useEffect, useState } from "react";
 import SearchByName from "./SearchByName";
 import Card from "./Card";
+import { useTranslation } from "react-i18next";
 
 function Weather({ lat, lon, checktype }) {
+  const { t, i18n } = useTranslation(["translation"]);
+  const changeLanguage = (code) => {
+    i18n.changeLanguage(code);
+  };
+
   const APIkey = "26d14311349b1d5ab28addb69dc2cf1e";
   let urlWeatherAPI = "";
   let urlForecast = "";

@@ -1,7 +1,12 @@
 import React from "react";
 import Spinner from "./Spinner";
+import { useTranslation } from "react-i18next";
 
 function Card({ showData, loadingData, weather, forecast, checktype }) {
+  const { t, i18n } = useTranslation(["translation"]);
+  const changeLanguage = (code) => {
+    i18n.changeLanguage(code);
+  };
   const kelvin = 273.15;
   const today = new Date();
   const day = today.getDate();
@@ -72,14 +77,14 @@ function Card({ showData, loadingData, weather, forecast, checktype }) {
                     <img src={iconUrl} alt="icon" />
                     {weather.weather[0].description}
                   </p>
-                  {checktype === 0 && (
+                  {checktype === 1 && (
                     <img
                       src="https://res.cloudinary.com/dahswyr0k/image/upload/v1649978081/WeatherApp/horta/IMG_20220414_133430_jbjptb.jpg"
                       className="img-fluid rounded-start"
                       alt="..."
                     />
                   )}
-                  {checktype === 1 && (
+                  {checktype === 0 && (
                     <img
                       src="https://res.cloudinary.com/dahswyr0k/image/upload/v1649978091/WeatherApp/everywhere/IMG_20220116_120132_eyjh88.jpg"
                       className="img-fluid rounded-start"
@@ -97,22 +102,22 @@ function Card({ showData, loadingData, weather, forecast, checktype }) {
                 <div className="col-md-8">
                   <div className="card-body text-start mt-2">
                     <h5 className="card-text">
-                      Temperatura máxima:{" "}
+                      {t("temp_max")}
                       {(weather.main.temp_max - kelvin).toFixed(1)}ºC
                     </h5>
                     <h5 className="card-text">
-                      Temperatura mínima:{" "}
+                      {t("temp_min")}
                       {(weather.main.temp_min - kelvin).toFixed(1)}ºC
                     </h5>
                     <h5 className="card-text">
-                      sensación térmica:{" "}
+                      {t("sens_therm")}
                       {(weather.main.feels_like - kelvin).toFixed(1)}ºC
                     </h5>
                     <h5 className="card-text">
-                      Humedad: {weather.main.humidity}%
+                      {t("humidity")} {weather.main.humidity}%
                     </h5>
                     <h5 className="card-text">
-                      Velocidad del viento: {weather.wind.speed}m/s
+                      {t("wind_speed")} {weather.wind.speed}m/s
                     </h5>
                   </div>
                   <hr />
@@ -154,7 +159,7 @@ function Card({ showData, loadingData, weather, forecast, checktype }) {
             </div>
           </div>
         ) : (
-          <h2 className="text-light">Sin datos</h2>
+          <h2 className="text-light">{t("message_no_data")}</h2>
         )}
       </div>
     </>
