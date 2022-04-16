@@ -1,4 +1,45 @@
-.App {
+body{
+  background-color: rgb(39, 39, 71)
+}
+.App{
+  text-align: center;
+}
+
+.input-group{
+  width: 60%;
+}
+
+.card{
+  max-width: 60%;
+}
+
+.card-title{
+  position:absolute;
+  padding: 20px;
+  
+  
+}
+
+.card-date{
+  position:absolute;
+  padding-left: 20px;
+  margin-top: 60px;
+}
+
+.card-temp{
+  position: absolute;
+  padding-left: 20px;
+  margin-top: 260px;
+  font-size: 50px;
+}
+
+.card-desc{
+  position: absolute;
+  padding-left: 20px;
+  margin-top: 320px;
+}
+
+/* .App {
   text-align: center;
 }
 
@@ -35,4 +76,4 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */
