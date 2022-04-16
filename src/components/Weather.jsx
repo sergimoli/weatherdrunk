@@ -73,7 +73,11 @@ function Weather({ lat, lon, checktype, lang }) {
       });
 
     //forecast part
-    urlForecast = urlForecast + cityUrl + loc;
+    if (loc !== undefined) {
+      urlForecast = urlForecast + cityUrl + loc;
+    } else {
+      urlForecast = urlForecast + cityUrl;
+    }
     await fetch(urlForecast)
       .then((response) => {
         if (!response.ok) throw new Error("Error retrieving the forecast");
@@ -100,7 +104,7 @@ function Weather({ lat, lon, checktype, lang }) {
       console.log("miro aquíii");
       getLocation();
     }
-  }, [checktype]);
+  }, [checktype, lang]);
 
   return (
     <>

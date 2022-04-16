@@ -80,7 +80,7 @@ i18n
           temp_min: "Temperatura mínima: ",
           sens_therm: "Sensació térmica: ",
           humidity: "Humetat: ",
-          wind_speed: "Velocidat del vent: ",
+          wind_speed: "Velocitat del vent: ",
         },
       },
     },
