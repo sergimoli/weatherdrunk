@@ -7,7 +7,7 @@ function Card({ showData, loadingData, weather, forecast, checktype }) {
   const changeLanguage = (code) => {
     i18n.changeLanguage(code);
   };
-  const kelvin = 273.15;
+  const kelvin = checktype === 2 ? 273.15 : 0;
   const today = new Date();
   const day = today.getDate();
   const month = today.getMonth() + 1;

@@ -3,7 +3,7 @@ import SearchByName from "./SearchByName";
 import Card from "./Card";
 import { useTranslation } from "react-i18next";
 
-function Weather({ lat, lon, checktype }) {
+function Weather({ lat, lon, checktype, lang }) {
   const { t, i18n } = useTranslation(["translation"]);
   const changeLanguage = (code) => {
     i18n.changeLanguage(code);
@@ -13,20 +13,26 @@ function Weather({ lat, lon, checktype }) {
   let urlWeatherAPI = "";
   let urlForecast = "";
   let cityUrl = "";
+  let language = "&lang=" + lang;
+
+  console.log("idioma escollit es:", lang);
+  console.log(i18n.language);
 
   if (checktype === 2) {
     urlWeatherAPI =
       "https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid=" +
       APIkey +
-      "&lang=en";
+      language;
     cityUrl = "&q=";
     urlForecast =
       "https://api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid=" +
       APIkey +
-      "&lang=en";
+      language;
   } else {
-    urlWeatherAPI = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${APIkey}&units=metric`;
-    urlForecast = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${APIkey}&units=metric`;
+    urlWeatherAPI = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${APIkey}&units=metric${language}`;
+    urlForecast = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${APIkey}&units=metric${language}`;
+    // urlWeatherAPI = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${APIkey}&units=metric`;
+    // urlForecast = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${APIkey}&units=metric`;
   }
 
   const [weather, setWeather] = useState([]); //the answer from the api (actual weather)
@@ -41,7 +47,11 @@ function Weather({ lat, lon, checktype }) {
     setLocation(loc);
     console.log("loc is:", loc);
     //weather part
-    urlWeatherAPI = urlWeatherAPI + cityUrl + loc;
+    if (loc !== undefined) {
+      urlWeatherAPI = urlWeatherAPI + cityUrl + loc;
+    } else {
+      urlWeatherAPI = urlWeatherAPI + cityUrl;
+    }
     console.log("la cerca que faig és:", urlWeatherAPI);
 
     await fetch(urlWeatherAPI)
@@ -53,6 +63,8 @@ function Weather({ lat, lon, checktype }) {
         //if everything goes well go are goona process all info in the parameter weatherdata
         console.log("weatherData", weatherData);
         setWeather(weatherData);
+        console.log("urlWeatherAPI", urlWeatherAPI);
+        console.log("urlForecast", urlForecast);
       })
       .catch((error) => {
         console.log(error);

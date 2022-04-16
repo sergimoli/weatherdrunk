@@ -4,15 +4,20 @@ import Weather from "./components/Weather";
 import NavBar from "./components/NavBar";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 function App() {
+  const { t, i18n } = useTranslation(["translation"]);
+  const changeLanguage = (code) => {
+    i18n.changeLanguage(code);
+  };
+
   const [latitude, setLatitude] = useState(0);
   const [longitude, setLongitude] = useState(0);
   const longitudeSergiHome = 2.163921012130307;
   const latitudeSergiHome = 41.43047756879439;
   const emptylongitude = 0;
   const emptylatitude = 0;
-  const lang = "cat";
   // checktype:
   // 0: local geolocation
   // 1: sergi location
@@ -44,7 +49,7 @@ function App() {
                 lat={emptylatitude}
                 lon={emptylongitude}
                 checktype={2}
-                lang={lang}
+                lang={i18n.language}
               />
             }
           />
@@ -56,7 +61,7 @@ function App() {
                 lat={latitude}
                 lon={longitude}
                 checktype={0}
-                lang={lang}
+                lang={i18n.language}
               />
             }
           />
@@ -67,7 +72,7 @@ function App() {
                 lat={latitudeSergiHome}
                 lon={longitudeSergiHome}
                 checktype={1}
-                lang={lang}
+                lang={i18n.language}
               />
             }
           />
