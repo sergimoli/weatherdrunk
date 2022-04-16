@@ -15,13 +15,14 @@ function Card({ showData, loadingData, weather, forecast, checktype }) {
   const date = day + "/" + month + "/" + year;
   let url = "";
   let iconUrl = "";
-  var iconUrl3 = "";
-  var iconUrl6 = "";
-  var iconUrl9 = "";
 
-  var forecastDate3 = "";
-  var forecastDate6 = "";
-  var forecastDate9 = "";
+  let iconUrl3 = "";
+  let iconUrl6 = "";
+  let iconUrl9 = "";
+
+  let forecastDate3 = "";
+  let forecastDate6 = "";
+  let forecastDate9 = "";
 
   if (loadingData) {
     return <Spinner></Spinner>;
