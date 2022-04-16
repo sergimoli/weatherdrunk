@@ -39,6 +39,21 @@ body{
   margin-top: 320px;
 }
 
+.image_you{
+  height: 400px;
+  width: 398px;
+}
+
+.image_sergi{
+  height: 400px;
+  width: 398px;
+}
+
+.image_city{
+  height: 400px;
+  width: 398px;
+}
+
 /* .App {
   text-align: center;
 }

@@ -79,22 +79,22 @@ function Card({ showData, loadingData, weather, forecast, checktype }) {
                   </p>
                   {checktype === 1 && (
                     <img
-                      src="https://res.cloudinary.com/dahswyr0k/image/upload/v1649978081/WeatherApp/horta/IMG_20220414_133430_jbjptb.jpg"
-                      className="img-fluid rounded-start"
+                      src="https://res.cloudinary.com/dahswyr0k/image/upload/v1649978076/WeatherApp/horta/IMG_20220414_133542_ihkhxe.jpg"
+                      className="img-fluid rounded-start image_sergi"
                       alt="..."
                     />
                   )}
                   {checktype === 0 && (
                     <img
-                      src="https://res.cloudinary.com/dahswyr0k/image/upload/v1649978091/WeatherApp/everywhere/IMG_20220116_120132_eyjh88.jpg"
-                      className="img-fluid rounded-start"
+                      src="https://res.cloudinary.com/dahswyr0k/image/upload/v1649978091/WeatherApp/everywhere/pexels-yelena-odintsova-7620584_etto2x.jpg"
+                      className="img-fluid rounded-start image_you"
                       alt="..."
                     />
                   )}
                   {checktype === 2 && (
                     <img
                       src="https://res.cloudinary.com/dahswyr0k/image/upload/v1649978090/WeatherApp/everywhere/aiguafreda_c5tgwg.jpg"
-                      className="img-fluid rounded-start"
+                      className="img-fluid rounded-start image_city"
                       alt="..."
                     />
                   )}
