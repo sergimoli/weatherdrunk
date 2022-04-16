@@ -66,7 +66,7 @@ function Card({ showData, loadingData, weather, forecast, checktype }) {
                   <h3 className="card-title">{weather.name}</h3>
                   <p className="card-date">{date}</p>
                   <h1 className="card-temp">
-                    {(weather.main.temp - 273.15).toFixed(1)}ºC
+                    {(weather.main.temp - kelvin).toFixed(1)}ºC
                   </h1>
                   <p className="card-desc">
                     <img src={iconUrl} alt="icon" />
@@ -98,15 +98,15 @@ function Card({ showData, loadingData, weather, forecast, checktype }) {
                   <div className="card-body text-start mt-2">
                     <h5 className="card-text">
                       Temperatura máxima:{" "}
-                      {(weather.main.temp_max - 273.15).toFixed(1)}ºC
+                      {(weather.main.temp_max - kelvin).toFixed(1)}ºC
                     </h5>
                     <h5 className="card-text">
                       Temperatura mínima:{" "}
-                      {(weather.main.temp_min - 273.15).toFixed(1)}ºC
+                      {(weather.main.temp_min - kelvin).toFixed(1)}ºC
                     </h5>
                     <h5 className="card-text">
                       sensación térmica:{" "}
-                      {(weather.main.feels_like - 273.15).toFixed(1)}ºC
+                      {(weather.main.feels_like - kelvin).toFixed(1)}ºC
                     </h5>
                     <h5 className="card-text">
                       Humedad: {weather.main.humidity}%
@@ -125,7 +125,7 @@ function Card({ showData, loadingData, weather, forecast, checktype }) {
                         {forecast.list[1].weather[0].description}
                       </p>
                       <p className="temp">
-                        {(forecast.list[1].main.temp - 273.15).toFixed(1)}ºC
+                        {(forecast.list[1].main.temp - kelvin).toFixed(1)}ºC
                       </p>
                     </div>
                     <div className="col">
@@ -135,7 +135,7 @@ function Card({ showData, loadingData, weather, forecast, checktype }) {
                         {forecast.list[2].weather[0].description}
                       </p>
                       <p className="temp">
-                        {(forecast.list[2].main.temp - 273.15).toFixed(1)}ºC
+                        {(forecast.list[2].main.temp - kelvin).toFixed(1)}ºC
                       </p>
                     </div>
                     <div className="col">
@@ -145,7 +145,7 @@ function Card({ showData, loadingData, weather, forecast, checktype }) {
                         {forecast.list[3].weather[0].description}
                       </p>
                       <p className="temp">
-                        {(forecast.list[3].main.temp - 273.15).toFixed(1)}ºC
+                        {(forecast.list[3].main.temp - kelvin).toFixed(1)}ºC
                       </p>
                     </div>
                   </div>
