@@ -3,9 +3,9 @@ import Header from "./components/Header";
 import Weather from "./components/Weather";
 import NavBar from "./components/NavBar";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import SearchByName from "./components/SearchByName";
-import SearchByActual from "./components/SearchByActual";
-import SearchBySergi from "./components/SearchBySergi";
+// import SearchByName from "./components/SearchByName";
+// import SearchByActual from "./components/SearchByActual";
+// import SearchBySergi from "./components/SearchBySergi";
 import { useEffect, useState } from "react";
 
 function App() {
