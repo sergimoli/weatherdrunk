@@ -21,7 +21,7 @@ function App() {
   // checktype:
   // 0: local geolocation
   // 1: sergi location
-  // 2: by city
+  // 2: search by city
 
   const checkPositionLocation = () => {
     navigator.geolocation.getCurrentPosition((position) => {

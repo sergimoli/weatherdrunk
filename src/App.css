@@ -15,15 +15,17 @@ body{
 
 .card-title{
   position:absolute;
+  align-items: center;
+  text-align: justify;
   padding: 20px;
-  
-  
+  color:black;  
 }
 
 .card-date{
   position:absolute;
   padding-left: 20px;
   margin-top: 60px;
+  color:black; 
 }
 
 .card-temp{
@@ -31,6 +33,7 @@ body{
   padding-left: 20px;
   margin-top: 260px;
   font-size: 50px;
+  /* color: black; */
 }
 
 .card-desc{

@@ -68,7 +68,7 @@ function Card({ showData, loadingData, weather, forecast, checktype }) {
             <div className="card mb-3 mx-auto bg-dark text-light">
               <div className="row g-0">
                 <div className="col-md-4">
-                  <h3 className="card-title">{weather.name}</h3>
+                  <h1 className="card-title">{weather.name}</h1>
                   <p className="card-date">{date}</p>
                   <h1 className="card-temp">
                     {(weather.main.temp - kelvin).toFixed(1)}ºC
