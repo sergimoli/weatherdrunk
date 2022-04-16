@@ -1,6 +1,7 @@
 import { Button } from "bootstrap";
 import React from "react";
 import { Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
+import { LinkContainer } from "react-router-bootstrap";
 import { Link } from "react-router-dom";
 
 function NavBar() {
@@ -8,7 +9,7 @@ function NavBar() {
     <>
       <Navbar bg="light" expand="lg">
         <Container fluid>
-          <Navbar.Brand href="#">Navbar scroll</Navbar.Brand>
+          <Navbar.Brand href="#">Weather drunk navigator</Navbar.Brand>
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">
             <Nav
@@ -16,21 +17,15 @@ function NavBar() {
               style={{ maxHeight: "100px" }}
               navbarScroll
             >
-              <Nav.Link href="#action1">Home</Nav.Link>
-              <Nav.Link href="#action2">Link</Nav.Link>
-              <NavDropdown title="Link" id="navbarScrollingDropdown">
-                <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
-                <NavDropdown.Item href="#action4">
-                  Another action
-                </NavDropdown.Item>
-                <NavDropdown.Divider />
-                <NavDropdown.Item href="#action5">
-                  Something else here
-                </NavDropdown.Item>
-              </NavDropdown>
-              <Nav.Link href="#" disabled>
-                Link
-              </Nav.Link>
+              <LinkContainer to="/yourubication">
+                <Nav.Link>Predicció d'on estàs tu</Nav.Link>
+              </LinkContainer>
+              <LinkContainer to="/sergiubication">
+                <Nav.Link>Predicció on viu en Sergi</Nav.Link>
+              </LinkContainer>
+              <LinkContainer to="/">
+                <Nav.Link>Predicció per ciutat</Nav.Link>
+              </LinkContainer>
             </Nav>
           </Navbar.Collapse>
         </Container>

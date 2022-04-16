@@ -12,12 +12,12 @@ function Weather({ lat, lon, checktype }) {
     urlWeatherAPI =
       "https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid=" +
       APIkey +
-      "&lang=es";
+      "&lang=en";
     cityUrl = "&q=";
     urlForecast =
       "https://api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid=" +
       APIkey +
-      "&lang=es";
+      "&lang=en";
   } else {
     urlWeatherAPI = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${APIkey}&units=metric`;
     urlForecast = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${APIkey}&units=metric`;
@@ -78,7 +78,7 @@ function Weather({ lat, lon, checktype }) {
     console.log("location es:", location);
     console.log("entro aquí!");
     console.log(checktype);
-    if (checktype === 0) {
+    if (checktype !== 2) {
       console.log("miro aquíii");
       getLocation();
     }
