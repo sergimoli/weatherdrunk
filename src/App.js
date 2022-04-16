@@ -12,7 +12,7 @@ function App() {
   const latitudeSergiHome = 41.43047756879439;
   const emptylongitude = 0;
   const emptylatitude = 0;
-  const lang = "es";
+  const lang = "cat";
   // checktype:
   // 0: local geolocation
   // 1: sergi location
